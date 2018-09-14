@@ -14,7 +14,12 @@ module.exports = {
   },
 
   createSurvey: async function(survey){
-    let resp = await Surveys.create(survey).fetch();
+    const resp = await Surveys.create(survey).fetch();
+    return resp;
+  },
+  
+  getSurvey: async function(req, res){
+    const resp = await Surveys.find();
     return resp;
   }
 

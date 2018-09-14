@@ -6,11 +6,13 @@
  */
 
 module.exports = {
-  getAllSurveys: function(req, res){
-    res.json({"msg": "RESP APIs Disabled By Default"})
-  },
   createSurvey: function(req, res){
     Surveys.createSurvey(req.body).then(function(data){
+        res.send(data);
+    })
+  },
+  getAllSurveys: function(req, res){
+    Surveys.getSurvey(req.body).then(function(data){
         res.send(data);
     })
   }

@@ -18,6 +18,7 @@ export class CreateComponent implements OnInit {
   })
   survey: any;
   udpateSurvey: Function;
+  getAllSurvey: Function;
   locations: string;
 
   constructor(private ServeyService: SurveyService) {
@@ -26,10 +27,11 @@ export class CreateComponent implements OnInit {
 
   ngOnInit() {
     this.udpateSurvey = function() {
-      this.ServeyService.postSurvey(this.surveyForm.value).subscribe(data => this.result = data);
-      console.log(this.result);
-      
-    }    
+      this.ServeyService.postSurvey(this.surveyForm.value).subscribe(data => this.surveyCreated = data);      
+    }  
+    this.getAllSurvey = function() {
+      this.ServeyService.getSurveys(this.surveyForm.value).subscribe(data => this.allSurvey = data);      
+    }   
   }
 
 }
