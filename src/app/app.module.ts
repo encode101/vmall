@@ -3,7 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { SurveyModule } from './survey/survey.module';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,12 @@ import { OAuthModule } from 'angular-oauth2-oidc';
   imports: [
     BrowserModule,
     AuthModule,
-    OAuthModule.forRoot()
+    OAuthModule.forRoot(),
+    DashboardModule,
+    SurveyModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -1,0 +1,12 @@
+<form [formGroup]="surveyForm" (ngSubmit)="udpateSurvey()">
+  <label>
+    <input type="text" name="surveyname" id="surveyName" formControlName="name" placeholder="Survey Name" />
+  </label>
+  <label>
+    <input type="text" name="clientId" id="clientId" formControlName="clientId" placeholder="Client"  />
+  </label>
+  <label>
+    <input type="text" name="surveyType" id="surveyType" formControlName="surveyType" placeholder="Survey Type"  />
+  </label>
+  <input type="submit" value="Submit Survey Result" ngClick="udpateSurvey()" />
+</form>
